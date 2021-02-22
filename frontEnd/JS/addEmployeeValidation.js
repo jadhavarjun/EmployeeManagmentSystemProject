@@ -1,23 +1,5 @@
 
 
-
-
-
-
-//email Address Pattern
-const emailRegex = RegExp(
-    /^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$/
-);
-
-const department = RegExp(
-    /^[A-Za-z]/
-);
-
-//Mobile No Pattern 
-const mobileNumber = RegExp(
-    /^[0-9]{10}$/
-)
-
 // password Pattern
 const password = RegExp(
     /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
@@ -32,16 +14,50 @@ function Validation() {
     console.log(firstName);
     let result = name.test(firstName);
     console.log(result);
-    if(result==false){
+    if (result == false) {
         document.getElementById("FirstNameError").innerHTML = "first name should be minimum 3 characters and first Alphabet should be Capital";
         return false;
     }
     //First and Last Name Pattern 
     let lastNameCheck = name.test(document.getElementById("Last_Name").value);
-    if(lastNameCheck==false){
+    if (lastNameCheck == false) {
         document.getElementById("LastNameError").innerHTML = "last name should be minimum 3 characters and first Alphabet should be Capital";
         return false;
     }
-
-
+    //email Address Pattern
+    const emailRegex = RegExp(
+        /^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$/
+    );
+    let emailCheck = emailRegex.test(document.getElementById("email").value);
+    if (emailCheck == false) {
+        document.getElementById("emailError").innerHTML = "last name should be minimum 3 characters and first Alphabet should be Capital";
+        return false;
+    }
+    //department Pattern
+    const department = RegExp(
+        /^[A-Za-z]/
+    );
+    let departmentCheck = department.test(document.getElementById("department").value);
+    if (departmentCheck == false) {
+        document.getElementById("departmentError").innerHTML = "This field is required! Please Enter Department";
+        return false;
+    }
+    //Mobile No Pattern 
+    const mobileNo = RegExp(
+        /^[0-9]{10}$/
+    );
+    let mobileCheck = mobileNo.test(document.getElementById("mobileNo").value);
+    if (mobileCheck == false) {
+        document.getElementById("mobileNoError").innerHTML = "mobile no must be 10 number!!";
+        return false;
+    }
+    // password Pattern
+    const password = RegExp(
+        /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+    );
+    let passwordCheck = password.test(document.getElementById("password").value);
+    if (passwordCheck == false) {
+        document.getElementById("passwordError").innerHTML = "password length must be minimum 6 and maximum 16 and must contain Alphabet and minimum 1 Number and 1 Special Characters!!";
+        return false;
+    }
 }

@@ -3,9 +3,13 @@ body{
     background-color: #FFC0CB;
 }
 
-#table{
-    margin-top: 60px;
-    font-family: 'Hammersmith One', sans-serif;
+.main{
+    margin-left: 50px;
+    margin-top: 80px;
+}
+
+form{
+    margin-top: 50px;
     font-size: larger;
 }
 
@@ -19,9 +23,10 @@ body{
 } */
 
 .btn{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-#FirstNameError, #LastNameError{
+#FirstNameError, #LastNameError,#emailError,#departmentError,#mobileNoError,#passwordError{
+    margin:auto;
     color: red;
 }
