@@ -1,0 +1,27 @@
+body{
+    /* text-align: -webkit-center; */
+    background-color: #FFC0CB;
+}
+
+#table{
+    margin-top: 60px;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: larger;
+}
+
+.heading{
+    font-family: 'Fredoka One', cursive;
+    margin-top: 20px;
+}
+
+/* #Email_Address,#Department,#Mobile_No,#Password,#name{
+    width: 200%;
+} */
+
+.btn{
+    margin-top: 20px;
+}
+
+#FirstNameError, #LastNameError{
+    color: red;
+}

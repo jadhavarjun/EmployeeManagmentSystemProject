@@ -1,0 +1,26 @@
+
+#header{
+}
+
+#h1right{
+    text-align: center;
+    margin-top: 20px;
+    /* font-family: 'Courgette', cursive; */
+}
+
+#btnAdd{
+    margin-left: 40px;
+    margin-top: 80px;
+}
+
+.table{
+    text-align: center;
+    margin-top: 70px;
+    border: none;
+}
+
+#thead{
+    color: white;
+    background-color: #006400;
+    font-family: -webkit-body;
+}
