@@ -23,6 +23,7 @@ module.exports = class Controller {
     }
 
     create(req, res) {
+        console.log(req.body);
         try {
             objService.insert(req.body)
                 .then((result) => {
@@ -39,12 +40,11 @@ module.exports = class Controller {
         }
     }
     findById(req, res) {
-        console.log(req.params.id);
         try {
             let empid = req.params.id;
+            console.log("getById", empid);
             objService.findRecordById(empid)
                 .then((result) => {
-                    console.log("pass", req.params);
                     response.success = true;
                     response.data = result.data;
                     response.message = result.message;
@@ -65,7 +65,6 @@ module.exports = class Controller {
             let empid = req.params.id;
             objService.updateData(empid, newData)
                 .then((result) => {
-                    console.log("pass", req.params);
                     response.success = true;
                     response.data = result.data;
                     response.message = result.message;
@@ -84,10 +83,9 @@ module.exports = class Controller {
     deleteData(req, res) {
         try {
             let empid = req.params.id;
-            console.log("id", empid);
+            console.log("empid",empid);
             objService.deleteData(empid)
                 .then((result) => {
-                    console.log("pass", req.params);
                     response.success = true;
                     response.data = result.data;
                     response.message = result.message;

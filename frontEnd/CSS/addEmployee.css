@@ -1,6 +1,9 @@
 body{
     /* text-align: -webkit-center; */
-    background-color: #FFC0CB;
+    background-color:#79CBFB;
+    display:flex;
+    justify-content: center;
+    align-content: space-between;
 }
 
 .main{
@@ -8,8 +11,8 @@ body{
     margin-top: 80px;
 }
 
-form{
-    margin-top: 50px;
+.form{
+    margin-top: 30px;
     font-size: larger;
 }
 
@@ -18,15 +21,11 @@ form{
     margin-top: 20px;
 }
 
-/* #Email_Address,#Department,#Mobile_No,#Password,#name{
-    width: 200%;
-} */
-
 .btn{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #FirstNameError, #LastNameError,#emailError,#departmentError,#mobileNoError,#passwordError{
-    margin:auto;
+    margin: 20px;
     color: red;
 }

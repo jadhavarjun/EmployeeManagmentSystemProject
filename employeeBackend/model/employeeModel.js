@@ -34,7 +34,6 @@ let empModel = mongoose.model('empMangment', employeeManagment);
 
 module.exports = class EmployeeModel {
     create = (data) => {
-        console.log(data);
             return empModel.create(data)
                 .then((result) => {
                     return result;
@@ -46,7 +45,6 @@ module.exports = class EmployeeModel {
     findAll() {
             return empModel.find({})
                 .then((result) => {
-                    console.log(result);
                     return result;
                 })
                 .catch((error) => {
