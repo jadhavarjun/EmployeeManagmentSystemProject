@@ -24,3 +24,8 @@
     background-color: #1593D2;
     font-family: -webkit-body;
 }
+
+#First_Name,#Last_Name,#email,#department,#mobileNo,#password{
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
