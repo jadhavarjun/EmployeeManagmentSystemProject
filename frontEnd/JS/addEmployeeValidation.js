@@ -18,13 +18,13 @@ getEmpData();
 function printData(empData) {
     var table = document.getElementById("emptable")
     for (let i = 0; i < empData.length; i++) {
-        var row = `<tr> 
+        var row = `<tr id="tr"> 
                     <td>${empData[i].empFirstName}</td>
                     <td>${empData[i].empLastName}</td>
                     <td>${empData[i].empEmail}</td>
                     <td>${empData[i].empDepartment}</td>
                     <td>${empData[i].empMobile}</td>` +
-            "<td><i class=\"fas fa-user-edit\" data-toggle=\"modal\" data-target=\"#exampleModalLong\"  onclick=\"updateData('" + empData[i]._id + "')\"></i></td>" +
+            "<td><i class=\"fas fa-user-edit\" data-toggle=\"modal\" data-target=\"#exampleModalLong\"  onclick=\"addUpdateButton('" + empData[i]._id + "')\"></i></td>" +
             "<td> <i class=\"fas fa-user-times\" onclick=\"deleteData('" + empData[i]._id + "')\"></i> </td>" +
             "</tr>";
 
@@ -45,13 +45,21 @@ function deleteData(id) {
         }
     });
 }
+function addPostButton() {
+    let updateDiv = document.getElementById("button")
+    updateDiv.innerHTML = '<button id="btn" onclick="empPostData()">Add Employee</button>';
+    document.getElementById("exampleModalLongTitle").innerHTML = "Add Employee Details";
+}
 
-function updateData(id) {
-    document.getElementById("heading").innerHTML = "Update Employee Details";
+function addUpdateButton(id) {
+    document.getElementById("exampleModalLongTitle").innerHTML = "Update Employee Details";
+    let updateData = document.getElementById("button")
+   updateData.innerHTML =  "<button onclick=\"updateData('" + id + "')\">Update</button>";
+    // updateData.innerHTML = '<button id="btn" onclick="updateData()"\>Update</button>';
     console.log("id", id);
     $.ajax({
         type: 'post',
-        url: `http://localhost:3000/employee/update/${id}`,
+        url: `http://localhost:3000/employee/getById/${id}`,
         success: function (data) {
             console.log(data);
             // document.getElementById("First_Name").innerHTML = data.data.empFirstName;
@@ -66,9 +74,39 @@ function updateData(id) {
     })
 }
 
+function updateData(id) {
+    let firstName = document.getElementById("First_Name").value;
+    let lastName = document.getElementById("Last_Name").value;
+    let email = document.getElementById("email").value;
+    let department = document.getElementById("department").value;
+    let mobileNo = document.getElementById("mobileNo").value;
+    let password = document.getElementById("password").value;
+
+    let empData = {
+        empFirstName: firstName,
+        empLastName: lastName,
+        empEmail: email,
+        empDepartment: department,
+        empMobile: mobileNo,
+        empPassword: password
+    }
+    console.log(empData);
+    $.ajax({
+        type: "PUT",
+        contentType: "application/json",
+        url: `http://localhost:3000/employee/update/${id}`,
+        headers: {"X-HTTP-Method-Override": "PUT"},
+        dataType: "json",
+        data: JSON.stringify(empData),
+        success: function (data) {
+            console.log(data);
+            // location.reload();
+        }
+    })
+}
+
 //Post Data Method
 function empPostData() {
-    document.getElementById("heading").innerHTML = "Add Employee Details";
     let firstName = document.getElementById("First_Name").value;
     let lastName = document.getElementById("Last_Name").value;
     let email = document.getElementById("email").value;
@@ -93,13 +131,14 @@ function empPostData() {
         data: JSON.stringify(empData),
         success: function (data) {
             console.log(data);
-            location.reload();
+            // location.reload();
         }
     })
 }
 
 function Validation() {
     //First and Last Name Pattern 
+    console.log("Validation Function");
     const name = RegExp(
         /^[A-Z]{1}[A-Za-z]{2}/
     );
@@ -109,13 +148,13 @@ function Validation() {
     console.log(result);
     if (result == false) {
         document.getElementById("FirstNameError").innerHTML = "first name should be minimum 3 characters and first Alphabet should be Capital";
-        return false;
+        // return false;
     }
     //First and Last Name Pattern 
     let lastNameCheck = name.test(document.getElementById("Last_Name").value);
     if (lastNameCheck == false) {
         document.getElementById("LastNameError").innerHTML = "last name should be minimum 3 characters and first Alphabet should be Capital";
-        return false;
+        // return false;
     }
     //email Address Pattern
     const emailRegex = RegExp(
@@ -124,7 +163,7 @@ function Validation() {
     let emailCheck = emailRegex.test(document.getElementById("email").value);
     if (emailCheck == false) {
         document.getElementById("emailError").innerHTML = "last name should be minimum 3 characters and first Alphabet should be Capital";
-        return false;
+        // return false;
     }
     //department Pattern
     const department = RegExp(
@@ -133,7 +172,7 @@ function Validation() {
     let departmentCheck = department.test(document.getElementById("department").value);
     if (departmentCheck == false) {
         document.getElementById("departmentError").innerHTML = "This field is required! Please Enter Department";
-        return false;
+        // return false;
     }
     //Mobile No Pattern 
     const mobileNo = RegExp(
@@ -142,7 +181,7 @@ function Validation() {
     let mobileCheck = mobileNo.test(document.getElementById("mobileNo").value);
     if (mobileCheck == false) {
         document.getElementById("mobileNoError").innerHTML = "mobile no must be 10 number!!";
-        return false;
+        // return false;
     }
     // password Pattern
     const password = RegExp(

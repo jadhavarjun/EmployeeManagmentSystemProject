@@ -30,32 +30,30 @@
 
 <body id="header">
     <div>
-        <form action="" onsubmit="return Validation()">
-            <div id="topdiv">
-                <h1 id="h1right">Employee Managment System</h1> <br>
-                <!-- <button onclick="window.location.href='addEmployee.html'" type="button" class="btn btn-primary btn-lg"
+
+        <div id="topdiv">
+            <h1 id="h1right">Employee Managment System</h1> <br>
+            <!-- <button onclick="window.location.href='addEmployee.html'" type="button" class="btn btn-primary btn-lg"
                 id="btnAdd">
                 <img src="https://img.icons8.com/fluent-systems-filled/24/ffffff/add-user-male.png" />
                 Add Employee
             </button> -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                    Add Employee
-                </button>
+            <!-- Button trigger modal -->
+            <button type="button" onclick="addPostButton()" class="btn btn-primary btn-lg add-emp-btn" data-toggle="modal"
+                data-target="#exampleModalLong">
+                Add Employee
+            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" onsubmit="return Validation()">
                                 <div class="box">
                                     <h1 class="heading" id="heading"> </h1>
                                     <br>
@@ -65,72 +63,70 @@
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="First_Name"
                                                     placeholder="Enter First Name">
-                                                <small id="FirstNameError"></small>
+                                                <small class="text-danger" id="FirstNameError"></small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="Last_Name"
                                                     placeholder="Enter Last Name">
-                                                <span id="LastNameError"></span>
+                                                <small class="text-danger" id="LastNameError"></small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <input type="email" class="form-control" id="email"
                                                     placeholder="Enter email address">
-                                                <span id="emailError"></span>
+                                                <small class="text-danger" id="emailError"></small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="department"
                                                     placeholder="Enter Department">
-                                                <span id="departmentError"></span>
+                                                <small class="text-danger" id="departmentError"></small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <input type="number" class="form-control" id="mobileNo"
                                                     placeholder="Enter Mobile No">
-                                                <span id="mobileNoError"></span>
+                                                <small class="text-danger" id="mobileNoError"></small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <input type="password" class="form-control" id="password"
                                                     placeholder="Enter Password">
-                                                <span id="passwordError"></span>
+                                                <small class="text-danger" id="passwordError"></small>
                                             </div>
                                         </div>
-
-
                                         <!-- </form> -->
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button class="btn btn-primary btn-lg" data-dismiss="modal"
-                                    onclick="empPostData()">Submit</button>
-                            </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <!-- <button class="btn btn-primary btn-lg" onclick="empPostData()">Submit</button> -->
+                                    <div class="btn btn-primary" id="button"> </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <table class="table" id="emptable">
-                    <thead id="thead">
-                        <tr>
-                            <th>First Name </th>
-                            <th>Last Name</th>
-                            <th>Email ID</th>
-                            <th>Department</th>
-                            <th>Mobile No</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <!-- <tbody>
+            </div>
+            <table class="table" id="emptable">
+                <thead id="thead">
+                    <tr>
+                        <th>First Name </th>
+                        <th>Last Name</th>
+                        <th>Email ID</th>
+                        <th>Department</th>
+                        <th>Mobile No</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <!-- <tbody>
                     <tr>
                         <td id="first_Name"> </td>
                         <td id="last_Name"> </td>
@@ -147,9 +143,9 @@
                         </td>
                     </tr>
                 </tbody> -->
-                </table>
-            </div>
-        </form>
+            </table>
+        </div>
+
     </div>
 </body>
 

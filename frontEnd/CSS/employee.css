@@ -14,7 +14,7 @@
 }
 
 .table{
-    text-align: center;
+    /* text-align: center; */
     margin-top: 50px;
     border: none;
 }
@@ -25,7 +25,33 @@
     font-family: -webkit-body;
 }
 
-#First_Name,#Last_Name,#email,#department,#mobileNo,#password{
+#FirstNameError,#LastNameError,#emailError,#departmentError,#mobileNoError,#passwordError{
     margin-bottom: 20px;
     margin-right: 40px;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+  #tr{
+      text-align: center;
+  }
+.modal-content{
+    /* align-items: center; */
+}
+
+.add-emp-btn{
+    margin-left: 40px;
 }
