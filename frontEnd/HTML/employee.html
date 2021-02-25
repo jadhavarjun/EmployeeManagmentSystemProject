@@ -39,8 +39,8 @@
                 Add Employee
             </button> -->
             <!-- Button trigger modal -->
-            <button type="button" onclick="addPostButton()" class="btn btn-primary btn-lg add-emp-btn" data-toggle="modal"
-                data-target="#exampleModalLong">
+            <button type="button" onclick="addPostButton()" class="btn btn-primary btn-lg add-emp-btn"
+                data-toggle="modal" data-target="#exampleModalLong">
                 Add Employee
             </button>
 
@@ -107,42 +107,29 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <!-- <button class="btn btn-primary btn-lg" onclick="empPostData()">Submit</button> -->
-                                    <div class="btn btn-primary" id="button"> </div>
+                                    <div class="btn btn-primary" data-dismiss="modal" id="button"> </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <table class="table" id="emptable">
-                <thead id="thead">
-                    <tr>
-                        <th>First Name </th>
-                        <th>Last Name</th>
-                        <th>Email ID</th>
-                        <th>Department</th>
-                        <th>Mobile No</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <!-- <tbody>
-                    <tr>
-                        <td id="first_Name"> </td>
-                        <td id="last_Name"> </td>
-                        <td id="email"> </td>
-                        <td id="department"> </td>
-                        <td id="mobile_no"> </td>
-                        <td>
-                            <span> <img src="https://img.icons8.com/fluent-systems-filled/24/4a90e2/edit-user.png" />
-                            </span>
-                        </td>
-                        <td>
-                            <span> <img src="https://img.icons8.com/fluent-systems-filled/24/4a90e2/delete-user-male.png" />
-                            </span>
-                        </td>
-                    </tr>
-                </tbody> -->
+            <div class="alert" id="success-msg"></div>
+            <div class="table-responsive">
+                <table class="table" id="emptable">
+                    <thead id="thead">
+                        <tr>
+                            <th scope="col">First Name </th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email ID</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobile No</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+            </div>
+            <br>
             </table>
         </div>
 

@@ -23,7 +23,6 @@ module.exports = class Controller {
     }
 
     create(req, res) {
-        console.log(req.body, "getData..............");
         try {
             objService.insert(req.body)
                 .then((result) => {

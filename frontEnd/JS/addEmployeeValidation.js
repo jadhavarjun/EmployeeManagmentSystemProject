@@ -41,7 +41,9 @@ function deleteData(id) {
         type: 'DELETE',
         success: function (data) {
             console.log(data);
-            location.reload();
+            // location.reload();
+            document.getElementById('success-msg').innerHTML = "Employee Data Deleted Successfully!!";
+            setTimeout(() => { location.reload(); }, 2000);
         }
     });
 }
@@ -100,6 +102,8 @@ function updateData(id) {
         data: JSON.stringify(empData),
         success: function (data) {
             console.log(data);
+            document.getElementById('success-msg').innerHTML = "Employee Data Updated Successfully!!";
+            setTimeout(() => { location.reload(); }, 2000);
             // location.reload();
         }
     })
@@ -131,7 +135,8 @@ function empPostData() {
         data: JSON.stringify(empData),
         success: function (data) {
             console.log(data);
-            // location.reload();
+            document.getElementById('success-msg').innerHTML = "Employee Data Added Successfully!!";
+            setTimeout(() => { location.reload(); }, 2000);
         }
     })
 }

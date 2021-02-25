@@ -34,24 +34,14 @@ table {
     width: 100%; 
     border-collapse: collapse; 
   }
-  th { 
-    background: #333; 
-    color: white; 
-    font-weight: bold; 
-  }
-  td, th { 
-    padding: 6px; 
-    border: 1px solid #ccc; 
-    text-align: left; 
-  }
-
-  #tr{
-      text-align: center;
-  }
-.modal-content{
-    /* align-items: center; */
-}
 
 .add-emp-btn{
     margin-left: 40px;
+}
+.alert{
+    display: flex;
+    justify-content: center;
+    border: ridge;
+    color: green;
+    font-size: xx-large;;
 }
