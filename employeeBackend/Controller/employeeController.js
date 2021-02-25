@@ -23,7 +23,7 @@ module.exports = class Controller {
     }
 
     create(req, res) {
-        console.log(req.body);
+        console.log(req.body, "getData..............");
         try {
             objService.insert(req.body)
                 .then((result) => {
@@ -42,7 +42,6 @@ module.exports = class Controller {
     findById(req, res) {
         try {
             let empid = req.params.id;
-            console.log("getById", empid);
             objService.findRecordById(empid)
                 .then((result) => {
                     response.success = true;
@@ -61,8 +60,9 @@ module.exports = class Controller {
 
     updateData(req, res) {
         try {
-            let newData = req.body.update;
+            let newData = req.body;
             let empid = req.params.id;
+            console.log("update id and data", empid, newData);
             objService.updateData(empid, newData)
                 .then((result) => {
                     response.success = true;
